@@ -49,16 +49,18 @@ class App extends Component {
         .includes(searchField.toLowerCase())
     );
 
-    return isPending ? (
-      <h1 className="tc light-green">Loading...</h1>
-    ) : (
+    return (
       <div className="tc">
         <Header />
         <SearchBox searchChange={onSearchChange} />
         <Scroll>
-          <ErrorBoundry>
-            <CardList robots={filterRobots} />
-          </ErrorBoundry>
+          {isPending ? (
+            <h1 className="tc light-green">Loading...</h1>
+          ) : (
+            <ErrorBoundry>
+              <CardList robots={filterRobots} />
+            </ErrorBoundry>
+          )}
         </Scroll>
       </div>
     );
