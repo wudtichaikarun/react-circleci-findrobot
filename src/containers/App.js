@@ -49,6 +49,8 @@ class App extends Component {
         .includes(searchField.toLowerCase())
     );
 
+    console.log('isPending', isPending);
+
     return (
       <div className="tc">
         <Header />
