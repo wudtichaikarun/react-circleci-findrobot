@@ -8,6 +8,7 @@ const SearchBox = ({
   return (
     <div>
       <input
+        aria-label="Search Robots"
         className="pa2 ba b--green bg-light-blue mb3"
         type="search"
         placeholder="search robots"

@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 
 class Header extends Component {
   shouldComponentUpdate() {
@@ -6,8 +8,11 @@ class Header extends Component {
   }
 
   render() {
-    console.log('Header component');
-    return <h1 className="light-green f1">RoboFriends</h1>;
+    return (
+      <h1 className="light-green f1">
+        RoboFriends
+      </h1>
+    );
   }
 }
 

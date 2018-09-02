@@ -4,6 +4,7 @@ import {
   REQUEST_ROBOTS_SUCCESS,
   REQUEST_ROBOTS_FAILED
 } from './constants';
+import { apiCall } from './spi/api';
 
 export const setSearchField = text => ({
   type: CHANGE_SEARCH_FIELD,
@@ -16,20 +17,18 @@ export const requestRobots = () => dispatch => {
     type: REQUEST_ROBOTS_PENDING
   });
 
-  fetch(
-    'https://jsonplaceholder.typicode.com/users'
-  )
-    .then(res => res.json())
-    .then(data =>
-      dispatch({
-        type: REQUEST_ROBOTS_SUCCESS,
-        payload: data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: REQUEST_ROBOTS_FAILED,
-        payload: err
-      })
-    );
+  // fetch(
+  //   'https://jsonplaceholder.typicode.com/users'
+  // )
+  //   .then(res => res.json())
+  //   .then(data =>
+  //     dispatch({
+  //       type: REQUEST_ROBOTS_SUCCESS,
+  //       payload: data
+  //     })
+  //   )
+
+  apiCall('https://jsonplaceholder.typicode.com/users')
+    .then(data => dispatch({ type: REQUEST_ROBOTS_SUCCESS, payload: data }))
+    .catch(err => dispatch({ type: REQUEST_ROBOTS_FAILED, payload: err }));
 };

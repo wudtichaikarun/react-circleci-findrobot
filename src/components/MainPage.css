@@ -3,7 +3,8 @@
   font-family: 'SEGA';
   font-size: normal;
   font-weight: normal;
-  src: local('SEGA'), url('./SEGA.woff') format('woff');
+  src: local('SEGA'),
+    url('./SEGA.woff') format('woff');
 }
 
 h1 {
