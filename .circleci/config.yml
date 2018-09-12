@@ -5,15 +5,15 @@ jobs:
       - image: circleci/node:9.11.1
     steps:
       - checkout
-      - run: yarn install
-      - run: CI=true yarn run build
+      - run: npm install
+      - run: CI=true npm run build
   test:
     docker:
       - image: circleci/node:9.11.1
     steps:
       - checkout
-      - run: yarn install
-      - run: yarn run test
+      - run: npm install
+      - run: npm run test
   hithere:
     docker:
       - image: circleci/node:9.11.1
