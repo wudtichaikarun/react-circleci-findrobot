@@ -12,12 +12,12 @@ jobs:
     steps:
       - checkout
       - run: echo 'Hello romantic2'
-  workflows:
-    version: 2
-    romantic1_2:
-      jobs:
-        - romantic1
-        - romantic2
+workflows:
+  version: 2
+  romantic1_2:
+    jobs:
+      - romantic1
+      - romantic2
 
 # Javascript Node CircleCI 2.0 configuration file
 #
