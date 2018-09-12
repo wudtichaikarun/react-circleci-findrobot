@@ -5,23 +5,32 @@ jobs:
       - image: circleci/node:8.9
     stpes:
       - checkout
-      - run: echo 'npm install'
-      - run: npm install
-      - run: CI=true npm run build
+      - run: echo 'yarn install'
+      - run: yarn install
+      - run: CI=true yarn run build
   test:
     docker:
       - image: circleci/node:8.9
     steps:
       - checkout
       - run: echo 'testing stuff'
-      - run: npm install
-      - run: npm test
+      - run: yarn install
+      - run: yarn run test
+  hithere:
+    docker:
+      - image: circleci/node:8.9
+    steps:
+      - checkout
+      - run: echo 'hello there'
 workflows:
   version: 2
-  build_test_lint:
+  build_test:
     jobs:
       - build
-      - test
+      - hithere
+      - test:
+          requires:
+            - hithere
 
 # Javascript Node CircleCI 2.0 configuration file
 #
