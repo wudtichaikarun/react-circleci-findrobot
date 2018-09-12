@@ -6,7 +6,7 @@ jobs:
     stpes:
       - checkout
       - run: echo 'yarn install'
-      - run: yarn install
+      - run: yarn
       - run: CI=true yarn run build
   test:
     docker:
@@ -14,8 +14,8 @@ jobs:
     steps:
       - checkout
       - run: echo 'testing stuff'
-      - run: yarn install
-      - run: yarn run test
+      - run: yarn
+      - run: yarn test
   hithere:
     docker:
       - image: circleci/node:8.9
