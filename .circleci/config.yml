@@ -16,21 +16,12 @@ jobs:
       - run: echo 'testing stuff'
       - run: npm install
       - run: npm test
-  hithere:
-    docker:
-      - image: circleci/node:8.9
-    steps:
-      - checkout
-      - run: echo 'helloo'
 workflows:
   version: 2
   build_test_lint:
     jobs:
       - build
-      - hithere
-      - test:
-          requiere:
-            - hithere
+      - test
 
 # Javascript Node CircleCI 2.0 configuration file
 #
