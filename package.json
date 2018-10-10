@@ -2,7 +2,7 @@
   "name": "robots",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wudtichaikarun.github.io/react-create_react_app-story_book/",
+  "homepage": "https://wudtichaikarun.github.io/react-circleci-findrobot/",
   "dependencies": {
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
